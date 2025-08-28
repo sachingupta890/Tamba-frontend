@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Create an instance of axios with a base URL
 const api = axios.create({
-  baseURL: "http://localhost:3333/api",
+  baseURL: "https://tamba-backend.onrender.com/api/",
   withCredentials: true, // Your backend URL
 });
 
