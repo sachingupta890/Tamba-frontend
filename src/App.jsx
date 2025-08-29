@@ -48,7 +48,18 @@ const LoadingSpinner = () => (
 function App() {
   return (
     <Router>
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={{
+          success: {
+            duration: 3000, // Toast will disappear after 3 seconds
+          },
+          error: {
+            duration: 5000, // Error messages can stay a bit longer
+          },
+        }}
+      />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           {/* --- PUBLIC ROUTES --- */}
