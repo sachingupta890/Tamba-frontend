@@ -1,5 +1,6 @@
 // src/services/api.js
 import axios from "axios";
+import store from "../store/store";
 
 // Create an instance of axios with a base URL
 const api = axios.create({
@@ -7,6 +8,20 @@ const api = axios.create({
   withCredentials: true, // Your backend URL
 });
 
+api.interceptors.request.use(
+  (config) => {
+    const state = store.getState();
+    const token = state.auth.user?.token;
+
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 // Function to register a user
 export const registerUser = (userData) => {
   return api.post("/users/register", userData);
