@@ -1,6 +1,6 @@
 // src/services/api.js
 import axios from "axios";
-import store from "../store/store";
+import {store} from "../store/store";
 
 // Create an instance of axios with a base URL
 const api = axios.create({
