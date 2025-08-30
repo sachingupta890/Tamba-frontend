@@ -13,6 +13,7 @@ import AdminRoute from "./components/AdminRoute";
 import PublicRoute from "./components/PublicRoute";
 import AdminLayout from "./components/admin/AdminLayout"; // Admin Layout
 import PrivateRoute from "./components/PrivateRoute";
+import NotificationHandler from "./components/NotificationHandler";
 
 // --- LAZY LOADING PAGES ---
 // Public Pages
@@ -60,6 +61,7 @@ function App() {
           },
         }}
       />
+      <NotificationHandler />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           {/* --- PUBLIC ROUTES --- */}
