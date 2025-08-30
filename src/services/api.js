@@ -112,3 +112,6 @@ export const updateLeadStatus = (leadId, status) =>
 export const submitQuery = (queryData) => {
   return api.post("/query", queryData);
 };
+
+export const getNotifications = () => api.get("/notifications");
+export const markNotificationsAsRead = () => api.put("/notifications/read");
